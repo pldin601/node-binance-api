@@ -6,7 +6,7 @@
  * Released under the MIT License
  * ============================================================ */
 
-module.exports = function() {
+function createInstance() {
 	'use strict';
 	const WebSocket = require('ws');
 	const request = require('request');
@@ -795,6 +795,10 @@ LIMIT_MAKER
 			}
 		}
 	};
-}();
+};
 //https://github.com/binance-exchange/binance-official-api-docs
 //add rate limit and response status code
+
+module.exports = createInstance();
+
+module.exports.createInstance = createInstance;
